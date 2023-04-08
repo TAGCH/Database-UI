@@ -25,19 +25,19 @@ app.get( "/", function (req, res)
     }
 )
 
-app.get ( "/category", function (req, res)
+app.get ( "/Category.ejs", function (req, res)
     {
         res.render ( "Category" );
     }
 )
 
-app.get ( "/sales", function (req, res)
+app.get ( "/Sales.ejs", function (req, res)
     {
         res.render ( "Sales" );
     }
 )
 
-app.get ( "/franchise", function (req, res)
+app.get ( "/Franchise.ejs", function (req, res)
     {
         res.render ( "Franchise" );
     }
