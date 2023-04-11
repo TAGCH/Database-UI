@@ -1,4 +1,6 @@
 var express = require( "express" );
+const mysql = require('mysql');
+
 var app = express();
 
 app.set ( "view engine", "ejs" );
