@@ -1,5 +1,5 @@
 var express = require( "express" );
-const mysql = require('mysql');
+const pool = require("./database");
 
 var app = express();
 
@@ -10,7 +10,7 @@ const person = [{
     age: 17,
     canCook: true,
 }, {
-    name: 'Gavin',
+    name: 'Gavin',  
     age: 19,
     canCook: true,
 }, {
@@ -18,6 +18,20 @@ const person = [{
     age: 10,
     canCook: false,
 }];
+
+
+app.get('/users', async (req, res) => {
+    try {
+      const request = pool.request();
+      const result = await request.query('SELECT * FROM Restaurant');
+      res.send(result.recordset);
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Error retrieving users from database');
+    }
+  });
+  
+
 
 app.get( "/", function (req, res)
     {
@@ -45,6 +59,11 @@ app.get ( "/Franchise.ejs", function (req, res)
     }
 )
 
+app.get ( "/Reference.ejs", function (req, res)
+    {
+        res.render ( "Reference" );
+    }
+)
 
 app.listen (8081, "127.0.0.2",()=> {
     console.log("URL: http://127.0.0.2:8081");
