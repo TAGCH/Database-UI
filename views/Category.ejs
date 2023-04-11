@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scal=1.0">
     <title>Restaurant Ranking</title>
 
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/pricing/">
+
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="pricing.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
+  
+  </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="/">Restaurant Ranking</a>
+        <a class="navbar-brand" href="/" style="font-weight: 700;">Restaurant Ranking</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,11 +46,20 @@
           </form>
         </div>
       </nav>
+
+      <br><br><br><br>
   
       <main role="main" class="container">
   
         <div class="starter-template">
-          
+          <h2>Restaurant Category Table</h2>
+          <label for="category" style="font-family: Arial, Helvetica, sans-serif;">Sort by:</label>
+          <select name="category" id="category" onchange="location = this.value;">
+              <option value="Category.ejs"></option>
+              <option value="R_Cat.ejs">Rank</option>
+              <option value="C_Cat.ejs">Category</option>
+          </select>
+          <br><br>
         </div>
   
       </main><!-- /.container -->
