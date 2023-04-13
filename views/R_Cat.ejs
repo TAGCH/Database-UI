@@ -73,12 +73,11 @@
             <h2>Restaurant Category Table</h2>
             <label for="category" style="font-family: Arial, Helvetica, sans-serif;">Sort by:</label>
             <select name="category" id="category" onchange="location = this.value;">
-                <option value="Category.ejs"></option>
                 <option value="R_Cat.ejs">Rank</option>
                 <option value="C_Cat.ejs">Category</option>
             </select>
             <br><br>
-          </div>
+        </div>
 
         <div class="container marketing">
             <hr class="featurette-divider"><br>
@@ -94,13 +93,13 @@
                   </tr>
               </thead>
               <tbody>
-                    <!--<% result.recordset.forEach(function(row) { %>
-                        <tr>
-                            <td><%= row.Rank %></td>
-                            <td><%= row.RestaurantName %></td>
-                            <td><%= row.RestaurantType %></td>
-                        </tr>
-                    <% }); %> -->
+                  <% result.recordset.forEach(function(row) { %>
+                      <tr>
+                          <td><%= row.Rank %></td>
+                          <td><%= row.RestaurantName %></td>
+                          <td><%= row.RestaurantType %></td>
+                      </tr>
+                  <% }); %>
               </tbody>
             </table>
     

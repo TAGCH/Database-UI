@@ -31,12 +31,12 @@ app.post ("/Search", async (req, res) => {
 app.get('/users', async (req, res) => {
     try {
         const request = pool.request();
-        const result = await request.query('SELECT Rank from Restaurant');
+        const result = await request.query('SELECT * FROM Franchise');
         res.send(result.recordset);
-      } catch (err) {
+    } catch (err) {
         console.log(err);
         res.status(500).send('Error retrieving users from database');
-      }
+    }
   });
   
 
@@ -60,7 +60,7 @@ app.get ( "/Category.ejs", async (req, res) =>
     {
         try {
             const request = pool.request();
-            const result = await request.query('SELECT Top 50 Rank,RestaurantName,Category.RestaurantType FROM Restaurant,Category Where Restaurant.RestaurantID = Category.RestaurantID');
+            const result = await request.query('SELECT Rank,RestaurantName,Category.RestaurantType FROM Restaurant,Category Where Restaurant.RestaurantID = Category.RestaurantID');
             res.render ("Category", {
                 result,
             });
@@ -75,7 +75,7 @@ app.get ( "/R_Cat.ejs", async (req, res) =>
     {
         try {
             const request = pool.request();
-            const result = await request.query('SELECT Top 50 Rank,RestaurantName,Category.RestaurantType FROM Restaurant,Category Where Restaurant.RestaurantID = Category.RestaurantID');
+            const result = await request.query('SELECT Rank,RestaurantName,Category.RestaurantType FROM Restaurant,Category Where Restaurant.RestaurantID = Category.RestaurantID');
             res.render ("R_Cat", {
                 result,
             });
@@ -90,7 +90,7 @@ app.get ( "/C_Cat.ejs", async (req, res) =>
     {
         try {
             const request = pool.request();
-            const result = await request.query('SELECT Top 50 Rank,RestaurantName,Category.RestaurantType FROM Restaurant,Category Where Restaurant.RestaurantID = Category.RestaurantID');
+            const result = await request.query('SELECT Top 50 Rank,RestaurantName,Category.RestaurantType FROM Restaurant,Category Where Restaurant.RestaurantID = Category.RestaurantID ORDER BY Category.RestaurantType');
             res.render ("C_Cat", {
                 result,
             });
@@ -101,15 +101,33 @@ app.get ( "/C_Cat.ejs", async (req, res) =>
     }
 )
 
-app.get ( "/Sales.ejs", function (req, res)
+app.get ( "/Sales.ejs", async (req, res) =>
     {
-        res.render ( "Sales" );
+        try {
+            const request = pool.request();
+            const result = await request.query('SELECT Rank,RestaurantName,Sales,YOY_Sales FROM Restaurant,Sales where Restaurant.RestaurantID = Sales.RestaurantID;');
+            res.render ("Sales", {
+                result,
+            });
+        } catch (err) {
+            console.log(err);
+            res.status(500).send('Error retrieving users from database');
+        }
     }
 )
 
-app.get ( "/Franchise.ejs", function (req, res)
+app.get ( "/Franchise.ejs", async (req, res) =>
     {
-        res.render ( "Franchise" );
+        try {
+            const request = pool.request();
+            const result = await request.query('SELECT Rank,RestaurantName,Units,YOY_Units FROM Restaurant,Franchise where Restaurant.RestaurantID = Franchise.RestaurantID;');
+            res.render ("Franchise", {
+                result,
+            });
+        } catch (err) {
+            console.log(err);
+            res.status(500).send('Error retrieving users from database');
+        }
     }
 )
 
