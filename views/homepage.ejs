@@ -22,6 +22,15 @@
       tr:nth-child(even) {
         background-color: #f2f2f2;
       }
+
+      .item {
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .item:hover {
+        transform: scale(1.07);
+      }
     </style>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/pricing/">
@@ -82,9 +91,11 @@
         <div class="row">
           <div class="col-lg-4" style="left:80px; top:85px;">
             <center>
-              <a href="https://www.starbucks.co.th/" target="_blank" rel="noopener">
-                <img class="rounded-circle" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/640px-Starbucks_Corporation_Logo_2011.svg.png" alt="Netflix" width="140" height="140">
-              </a>
+              <div class="item">
+                <a href="https://www.starbucks.co.th/" target="_blank" rel="noopener">
+                  <img class="rounded-circle" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/640px-Starbucks_Corporation_Logo_2011.svg.png" alt="Netflix" width="140" height="140">
+                </a>
+              </div>
                 <h2>Starbucks</h2>
               <p style="font-family:courier;">Rank 2</p>
               <p><a class="btn btn-secondary" target="_blank" rel="noopener" href="https://www.starbucks.co.th/" role="button">View details &raquo;</a></p>
@@ -92,9 +103,11 @@
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <center>
-              <a href="https://www.mcdonalds.co.th/" target="_blank" rel="noopener">
-                <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT28IYhctTI6eQ7BxgKmxV9VDkKadfnsMYeTw&usqp=CAU" alt="Generic placeholder image" width="200" height="200">
-              </a>
+              <div class="item">
+                <a href="https://www.mcdonalds.co.th/" target="_blank" rel="noopener">
+                  <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT28IYhctTI6eQ7BxgKmxV9VDkKadfnsMYeTw&usqp=CAU" alt="Generic placeholder image" width="200" height="200">
+                </a>
+              </div>
               <h2>McDonald's</h2>
               <p style="font-family:courier;"">Rank 1</p>
               <p><a class="btn btn-secondary" target="_blank" rel="noopener" href="https://www.mcdonalds.co.th/" role="button">View details &raquo;</a></p>
@@ -102,9 +115,11 @@
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4" style="right:80px; top:85px;">
           <center>
-            <a href="https://www.chick-fil-a.com/" target="_blank" rel="noopener">
-              <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd3m1QBCqZyJO6fucM3GsuCnwPKELzcuB7zC2L5lsHhIrQ9kH4WbibDioymhOVIz8IK_o&usqp=CAU" alt="Generic placeholder image" width="140" height="140">
-            </a>
+            <div class="item">
+              <a href="https://www.chick-fil-a.com/" target="_blank" rel="noopener">
+                <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd3m1QBCqZyJO6fucM3GsuCnwPKELzcuB7zC2L5lsHhIrQ9kH4WbibDioymhOVIz8IK_o&usqp=CAU" alt="Generic placeholder image" width="140" height="140">
+              </a>
+            </div>
             <h2>Chick-fil-A</h2>
             <p style="font-family:courier;">Rank 3</p>
             <p><a class="btn btn-secondary" target="_blank" rel="noopener" href="https://www.chick-fil-a.com/" role="button">View details &raquo;</a></p>
@@ -128,19 +143,23 @@
               <p class="lead">Burger King (BK) is an American-based multinational chain of hamburger fast food restaurants. Headquartered in Miami-Dade County, Florida, the company was founded in 1953 as Insta-Burger King, a Jacksonville, Florida–based restaurant chain.</p>
             </div>
             <div class="col-md-4" style="left:80px;">
-              <a href="https://www.burgerking.co.th/" target="_blank" rel="noopener">
-                <img class="featurette-image img-fluid mx-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Burger_King_2020.svg/800px-Burger_King_2020.svg.png" alt="Netflix" width="250" height="250">
-              </a>
+              <div class="item">
+                <a href="https://www.burgerking.co.th/" target="_blank" rel="noopener">
+                  <img class="featurette-image img-fluid mx-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Burger_King_2020.svg/800px-Burger_King_2020.svg.png" alt="Netflix" width="250" height="250">
+                </a>
               </div>
+            </div>
         </div>
 
         <hr class="featurette-divider">
 
         <div class="row featurette">
           <div class="col-md-4">
-            <a href="https://www.kfc.co.th/?utm_source=google_sem&utm_medium=ads_pfm&utm_campaign=230323_brandoff_delivery_oc&utm_content=cpa_sem_ad_text_adtext_&gclid=CjwKCAjw586hBhBrEiwAQYEnHfWRrKb8BnEM1xU3OEZXYVS7GHkH5bIBSFrBizu97pyryQjVTwYMUxoCFokQAvD_BwE&gclsrc=aw.ds" target="_blank" rel="noopener">
-              <img class="featurette-image img-fluid mx-auto" src="https://www.terminal21.co.th/korat/wp-content/uploads/2016/11/KFC.png" alt="Generic placeholder image" width="250" height="250">
-            </a>
+            <div class="item">
+              <a href="https://www.kfc.co.th/?utm_source=google_sem&utm_medium=ads_pfm&utm_campaign=230323_brandoff_delivery_oc&utm_content=cpa_sem_ad_text_adtext_&gclid=CjwKCAjw586hBhBrEiwAQYEnHfWRrKb8BnEM1xU3OEZXYVS7GHkH5bIBSFrBizu97pyryQjVTwYMUxoCFokQAvD_BwE&gclsrc=aw.ds" target="_blank" rel="noopener">
+                <img class="featurette-image img-fluid mx-auto" src="https://www.terminal21.co.th/korat/wp-content/uploads/2016/11/KFC.png" alt="Generic placeholder image" width="250" height="250">
+              </a>
+            </div>
           </div>
 
           <div class="col-md-8 order-md-1">
@@ -159,9 +178,11 @@
             <p class="lead">Dairy Queen is an American chain of soft serve ice cream and fast food restaurants headquartered in Bloomington, Minnesota, United States. It was owned and operated by Sherb Noble and opened on June 22, 1940.</p>
           </div>
           <div class="col-md-4" style="left:80px;">
-            <a href="https://www.1112delivery.com/restaurant/dairy-queen?cid=" target="_blank" rel="noopener">
-              <img class="featurette-image img-fluid mx-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dairy_Queen_logo.svg/1200px-Dairy_Queen_logo.svg.png" alt="Generic placeholder image" width="250" height="250">
-            </a>
+            <div class="item">
+              <a href="https://www.1112delivery.com/restaurant/dairy-queen?cid=" target="_blank" rel="noopener">
+                <img class="featurette-image img-fluid mx-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dairy_Queen_logo.svg/1200px-Dairy_Queen_logo.svg.png" alt="Generic placeholder image" width="250" height="250">
+              </a>
+            </div>
           </div>
         </div>
 

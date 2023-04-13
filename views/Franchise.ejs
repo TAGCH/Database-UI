@@ -64,35 +64,16 @@
   
       <main role="main" class="container">
 
-        <div class="container marketing">
-
-            <center>
-              <h1 style="font-weight: 600;">RESTAURANT TOP 50 RANKING Franchise TABLE</h1><br>
-            </center>
-            <table>
-              <thead>
-                  <tr>
-                      <th>Rank</th>
-                      <th>Restaurant Name</th>
-                      <th>Units</th>
-                      <th>YOY_Units</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <% result.recordset.forEach(function(row) { %>
-                    <tr>
-                      <td><%= row.Rank %></td>
-                      <td><%= row.RestaurantName %></td>
-                      <td><%= row.Units %></td>
-                      <td><%= row.YOY_Units %></td>
-                    </tr>
-                  <% }); %>
-              </tbody>
-            </table>
-    
-            <!-- /END THE FEATURETTES -->
-            <hr class="featurette-divider">
-        </div><!-- /.container -->
+        <div class="starter-template">
+          <h2>Restaurant Top 50 Category Table</h2>
+          <label for="category" style="font-family: Arial, Helvetica, sans-serif;">Order by:</label>
+          <select name="category" id="category" onchange="location = this.value;">
+              <option value="Franchise.ejs"></option>
+              <option value="U_Fran.ejs">Units</option>
+              <option value="Y_Fran.ejs">YOY_Units</option>
+          </select>
+          <br><br>
+        </div>
   
       </main><!-- /.container -->
   

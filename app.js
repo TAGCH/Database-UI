@@ -116,12 +116,72 @@ app.get ( "/Sales.ejs", async (req, res) =>
     }
 )
 
+app.get ( "/S_Sale.ejs", async (req, res) =>
+    {
+        try {
+            const request = pool.request();
+            const result = await request.query('SELECT Rank,RestaurantName,Sales,YOY_Sales FROM Restaurant,Sales where Restaurant.RestaurantID = Sales.RestaurantID;');
+            res.render ("S_Sale", {
+                result,
+            });
+        } catch (err) {
+            console.log(err);
+            res.status(500).send('Error retrieving users from database');
+        }
+    }
+)
+
+app.get ( "/Y_Sale.ejs", async (req, res) =>
+    {
+        try {
+            const request = pool.request();
+            const result = await request.query('SELECT Rank,RestaurantName,Sales,YOY_Sales FROM Restaurant,Sales where Restaurant.RestaurantID = Sales.RestaurantID order by Sales.YOY_Sales DESC;');
+            res.render ("Y_Sale", {
+                result,
+            });
+        } catch (err) {
+            console.log(err);
+            res.status(500).send('Error retrieving users from database');
+        }
+    }
+)
+
 app.get ( "/Franchise.ejs", async (req, res) =>
     {
         try {
             const request = pool.request();
             const result = await request.query('SELECT Rank,RestaurantName,Units,YOY_Units FROM Restaurant,Franchise where Restaurant.RestaurantID = Franchise.RestaurantID;');
             res.render ("Franchise", {
+                result,
+            });
+        } catch (err) {
+            console.log(err);
+            res.status(500).send('Error retrieving users from database');
+        }
+    }
+)
+
+app.get ( "/U_Fran.ejs", async (req, res) =>
+    {
+        try {
+            const request = pool.request();
+            const result = await request.query('SELECT Rank,RestaurantName,Units,YOY_Units FROM Restaurant,Franchise where Restaurant.RestaurantID = Franchise.RestaurantID order by Franchise.Units DESC;');
+            res.render ("U_Fran", {
+                result,
+            });
+        } catch (err) {
+            console.log(err);
+            res.status(500).send('Error retrieving users from database');
+        }
+    }
+)
+
+app.get ( "/Y_Fran.ejs", async (req, res) =>
+    {
+        try {
+            const request = pool.request();
+            const result = await request.query('SELECT Rank,RestaurantName,Units,YOY_Units FROM Restaurant,Franchise where Restaurant.RestaurantID = Franchise.RestaurantID order by Franchise.YOY_Units DESC;');
+            res.render ("Y_Fran", {
                 result,
             });
         } catch (err) {
