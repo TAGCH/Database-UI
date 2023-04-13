@@ -57,12 +57,12 @@
               </div>
             </li> -->
           </ul>
-          <form class="form-inline my-2 my-lg-0" action="/Search" method="POST">
+          <form class="form-inline my-2 my-lg-0" action="Search.ejs" method="POST">
             <lable>
               <span></span>
                 <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search Restaurant Name" >
               </span>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">Search</button>
             </lable>
           </form>
         </div>
@@ -73,7 +73,7 @@
       <main role="main" class="container">
         
         <div class="starter-template">
-          <h2>Restaurant Top 50 Category Table</h2>
+          <h2>Restaurant Top 50 Sales Table</h2>
           <label for="category" style="font-family: Arial, Helvetica, sans-serif;">Order by:</label>
           <select name="category" id="category" onchange="location = this.value;">
               <option value="S_Sale.ejs">Sales</option>

@@ -8,23 +8,30 @@ app.set ( "view engine", "ejs" );
 app.use(bodyParser.urlencoded ({extended: false}));
 
 
-app.post ("/Search", async (req, res) => {
+app.post ("/Search.ejs", async (req, res) => {
     try {
         const request = pool.request();
         const result = await request.query('SELECT * from Restaurant');
-        result.recordset.forEach(function(row){
-            if (row.RestaurantName == req.body.search){
-                var Name = row.RestaurantName
-                res.render ("Search", {
-                    result,Name,
-                })
-                res.send(row.RestaurantName);
-            }
-        })
-      } catch (err) {
+        if (req.body.search == "") {
+            res.render ("homepage", {
+                result,
+            });
+        }
+        else{
+            result.recordset.forEach(async function(row){
+                if (row.RestaurantName == req.body.search){
+                    var Name = row.RestaurantName
+                    const Final_result = await request.query(`SELECT Restaurant.RANK, Restaurant.RestaurantName, Category.RestaurantType, Sales.Sales, Sales.YOY_Sales, Franchise.Units, Franchise.YOY_Units FROM Restaurant JOIN Category ON Restaurant.RestaurantID = Category.RestaurantID JOIN Sales ON Restaurant.RestaurantID = Sales.RestaurantID JOIN Franchise ON Restaurant.RestaurantID = Franchise.RestaurantID WHERE Restaurant.RestaurantName = '${Name.replace("'", "''")}'`);
+                    res.render ("Search", {
+                        Final_result,
+                    })
+                }
+            })
+        }
+    } catch (err) {
         console.log(err);
         res.status(500).send('Error retrieving users from database');
-      }
+    }
 })
 
 
